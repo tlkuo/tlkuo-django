@@ -1,2 +1,2 @@
 #!/bin/bash
-git pull
+cd /home/martin/tlkuo.frb/ && git pull
