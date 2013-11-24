@@ -20,11 +20,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = 'p$b8a6dsi=8^ej3vj(u7m$gbdq8+%v_gw5gaq)#02$*mba9bc4'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+import socket
+if socket.gethostname() == 'frb.tw':
+    DEBUG = False
+    TEMPLATE_DEBUG = False
+else:    
+    DEBUG = True
+    TEMPLATE_DEBUG = True
 
-TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.tlkuo.frb.tw']
 
 
 # Application definition
@@ -57,8 +61,12 @@ WSGI_APPLICATION = 'tlkuo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'tlkuo',
+        'USER': 'tlkuo',
+        'PASSWORD': 'tlkuo@mysql',
+        'HOST': '127.0.0.1',
+        'PORT': '3306'
     }
 }
 
