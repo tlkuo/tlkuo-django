@@ -2,6 +2,7 @@
 *.pot
 *.pyc
 local_settings.py
+static/
 
 # Eclipse project files
 .project
