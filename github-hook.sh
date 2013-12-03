@@ -1,6 +1,7 @@
 #!/bin/bash
 cd $(dirname $0)
 git pull
-rm -rf static
+npm install --production
 echo "yes" | python manage.py collectstatic
+grunt production
 
