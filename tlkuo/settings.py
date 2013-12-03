@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'github_hook',
-    'grunt',
 )
 
 MIDDLEWARE_CLASSES = (
