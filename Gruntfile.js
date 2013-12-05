@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           useShortDoctype: true,
           removeEmptyAttributes: true,
           removeOptionalTags: true,
-          removeEmptyElements: true
+          removeEmptyElements: false // experimental
         },
         expand: true,
         cwd: '<%= path.static_root %>',
