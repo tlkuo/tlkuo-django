@@ -2,6 +2,6 @@
 cd $(dirname $0)
 git pull
 npm install --production
-echo "yes" | python manage.py collectstatic
+python manage.py collectstatic --noinput -i '*.r.js'
 grunt production
 
