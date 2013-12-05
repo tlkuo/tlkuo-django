@@ -2,8 +2,8 @@
 *.pot
 *.pyc
 local_settings.py
-static/
-node_modules/
+/static/
+/node_modules/
 
 # Eclipse project files
 .project
