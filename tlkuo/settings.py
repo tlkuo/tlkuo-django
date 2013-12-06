@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'github_hook',
     'about',
+    'jam',
 )
 
 MIDDLEWARE_CLASSES = (
