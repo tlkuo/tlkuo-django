@@ -7,7 +7,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     path: {
       static_root: './static',
-      static_about: './about/static'
+      static_about: './about/static',
+      static_jam: './jam/static'
     },
     // Task configuration.
     htmlmin: {
@@ -44,15 +45,28 @@ module.exports = function(grunt) {
           out: '<%= path.static_root %>' + '/about/js/about.r.js'
         }
       }
+    },
+    jam: {
+      // https://github.com/shama/grunt-jam
+      dist: {
+        dest: '<%= path.static_root %>' + '/jam/require.js',
+        options: {
+          packageDir: '<%= path.static_jam %>' + '/jam',
+          verbose: true,
+          nominify: false,
+          wrap: false
+        }
+      }
     }
   });
 
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-jam');
 
   // Default task.
   grunt.registerTask('default', []);
-  grunt.registerTask('production', ['htmlmin', 'requirejs']);
+  grunt.registerTask('production', ['htmlmin', 'requirejs', 'jam']);
 
 };
