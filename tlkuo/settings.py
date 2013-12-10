@@ -25,10 +25,10 @@ if socket.gethostname() == 'frb.tw':
     DEBUG = False
     TEMPLATE_DEBUG = False
 else:    
-    DEBUG = True
-    TEMPLATE_DEBUG = True
+    DEBUG = False
+    TEMPLATE_DEBUG = False
 
-ALLOWED_HOSTS = ['.tlkuo.frb.tw']
+ALLOWED_HOSTS = ['.tlkuo.frb.tw', 'localhost']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'global',
     'github_hook',
     'about',
     'jam',
