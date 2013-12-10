@@ -25,10 +25,10 @@ if socket.gethostname() == 'frb.tw':
     DEBUG = False
     TEMPLATE_DEBUG = False
 else:    
-    DEBUG = False
-    TEMPLATE_DEBUG = False
+    DEBUG = True
+    TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = ['.tlkuo.frb.tw', 'localhost']
+ALLOWED_HOSTS = ['.tlkuo.frb.tw']
 
 
 # Application definition
