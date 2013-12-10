@@ -28,10 +28,10 @@
   "jam": {
     "packageDir": "jam/static/jam",
     "dependencies": {
-      "require": "2.0.6",
       "jquery": "2.0.0",
       "handlebars": "1.0.0",
-      "require-handlebars-plugin": "0.4.0"
+      "hbt": "0.0.3",
+      "text": "2.0.2"
     }
   }
 }
