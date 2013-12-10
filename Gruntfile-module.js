@@ -2,6 +2,7 @@
 // and module name and returns a configuration object.
 module.exports = function(grunt, moduleName) {
   var config = {},
+      pkg = grunt.config.get('pkg'),
       static_module = ['.', moduleName, 'static'].join('/');
 
   if (grunt.file.isDir(static_module)) {
@@ -41,10 +42,14 @@ module.exports = function(grunt, moduleName) {
         context: null,
         optimize: 'uglify2',
         baseUrl: [static_module, moduleName, 'js'].join('/'),
+        paths: pkg.jam ? pkg.jam.dependencies : {},
         mainConfigFile: [static_module, moduleName, 'js', moduleName + '.r.js' ].join('/'),
         out: ['<%= path.static_root %>', moduleName, 'js', moduleName + '.r.js'].join('/')
       }
     };
+
+    for (var path in config.requirejs.options.paths)
+        config.requirejs.options.paths[path] = "empty:"
 
     if (!grunt.file.isFile(config.requirejs.options.mainConfigFile))
         delete config.requirejs;
