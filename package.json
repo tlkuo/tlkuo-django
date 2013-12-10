@@ -22,6 +22,9 @@
     "grunt-jam": "~0.4.1",
     "grunt-modules": "~0.1.0"
   },
+  "devDependencies": {
+    "grunt-contrib-compass": "~0.7.0"
+  },
   "jam": {
     "packageDir": "jam/static/jam",
     "dependencies": {

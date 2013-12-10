@@ -26,6 +26,14 @@ module.exports = function(grunt, moduleName) {
       dest: '<%= path.static_root %>'
     };
 
+    config.compass = {
+      // https://github.com/gruntjs/grunt-contrib-compass
+      options: {
+        config: [static_module, moduleName, 'config.rb'].join('/'),
+        basePath: [static_module, moduleName].join('/')
+      }
+    };
+
     config.requirejs = {
       // https://github.com/gruntjs/grunt-contrib-requirejs
       options: {
