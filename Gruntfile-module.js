@@ -56,6 +56,30 @@ module.exports = function(grunt, moduleName) {
       }
     };
 
+    config.requirejs$ie_css = {
+      options: {
+        optimizeCss: 'standard',
+        cssIn: [static_module, moduleName, 'css', 'ie.css'].join('/'),
+        out: ['<%= path.static_root %>', moduleName, 'css', 'ie.css'].join('/')
+      }
+    };
+
+    config.requirejs$print_css = {
+      options: {
+        optimizeCss: 'standard',
+        cssIn: [static_module, moduleName, 'css', 'print.css'].join('/'),
+        out: ['<%= path.static_root %>', moduleName, 'css', 'print.css'].join('/')
+      }
+    };
+
+    config.requirejs$screen_css = {
+      options: {
+        optimizeCss: 'standard',
+        cssIn: [static_module, moduleName, 'css', 'screen.css'].join('/'),
+        out: ['<%= path.static_root %>', moduleName, 'css', 'screen.css'].join('/')
+      }
+    };
+
     for (var path in config.requirejs.options.paths)
         config.requirejs.options.paths[path] = "empty:"
 
@@ -64,6 +88,15 @@ module.exports = function(grunt, moduleName) {
 
     if (!grunt.file.isFile(config.requirejs$css.options.cssIn))
         delete config.requirejs$css;
+
+    if (!grunt.file.isFile(config.requirejs$ie_css.options.cssIn))
+        delete config.requirejs$ie_css;
+
+    if (!grunt.file.isFile(config.requirejs$print_css.options.cssIn))
+        delete config.requirejs$print_css;
+
+    if (!grunt.file.isFile(config.requirejs$screen_css.options.cssIn))
+        delete config.requirejs$screen_css;
   }
 
   return config;
