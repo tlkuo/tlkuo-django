@@ -48,11 +48,22 @@ module.exports = function(grunt, moduleName) {
       }
     };
 
+    config.requirejs$css = {
+      options: {
+        optimizeCss: 'standard',
+        cssIn: [static_module, moduleName, 'css', moduleName + '.css'].join('/'),
+        out: ['<%= path.static_root %>', moduleName, 'css', moduleName + '.css'].join('/')
+      }
+    };
+
     for (var path in config.requirejs.options.paths)
         config.requirejs.options.paths[path] = "empty:"
 
     if (!grunt.file.isFile(config.requirejs.options.mainConfigFile))
         delete config.requirejs;
+
+    if (!grunt.file.isFile(config.requirejs$css.options.cssIn))
+        delete config.requirejs$css;
   }
 
   return config;
