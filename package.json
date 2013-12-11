@@ -29,9 +29,7 @@
     "packageDir": "jam/static/jam",
     "dependencies": {
       "jquery": "2.0.0",
-      "handlebars": "1.0.0",
-      "hbt": "0.0.3",
-      "text": "2.0.2"
+      "handlebars": "1.0.0"
     }
   }
 }
