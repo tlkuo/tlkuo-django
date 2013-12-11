@@ -6,6 +6,7 @@ local_settings.py
 /node_modules/
 
 # Compass
+*.css
 .sass-cache/
 
 # Eclipse project files
