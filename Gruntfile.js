@@ -38,8 +38,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jam');
 
   // Default task.
-  grunt.registerTask('default', []);
-  grunt.registerTask('production', ['htmlmin', 'requirejs', 'jam']);
-  grunt.registerTask('dev', ['compass']);
+  grunt.registerTask('default', ['compass', 'htmlmin', 'requirejs', 'jam']);
 
 };
