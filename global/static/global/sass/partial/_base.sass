@@ -1,2 +1,26 @@
-.standard_msgbox
+@import "compass/css3/border-radius"
+@import "compass/css3/box-shadow"
+
+$width: 800px
+$height: 600px
+
+.container
+    .textbox
+        padding: 10px
+        background-color: lighten(black, 95%)
+        font-size: 50px
+        +border-radius(10px)
+
+    width: $width
+    height: $height
+    line-height: $height
+    margin: 10px auto
+    text:
+        align: center
+    background:
+        image: image-url("/static/global/images/frb.png")
+        repeat: no-repeat
+        position: right bottom
+
+    +single-box-shadow
 
