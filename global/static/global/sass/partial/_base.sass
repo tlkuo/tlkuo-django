@@ -1,5 +1,8 @@
 @import "compass/css3/border-radius"
 @import "compass/css3/box-shadow"
+@import "compass/css3/text-shadow"
+@import "compass/css3/images"
+@import "compass/css3/transform"
 
 $width: 800px
 $height: 600px
@@ -7,8 +10,9 @@ $height: 600px
 .container
     .textbox
         padding: 10px
-        background-color: lighten(black, 95%)
         font-size: 50px
+        +background-image(linear-gradient(white, lighten(black, 95%)))
+        +single-text-shadow(0px, 1px, 3px, false, lighten(black, 50%))
         +border-radius(10px)
 
     width: $width
@@ -23,4 +27,7 @@ $height: 600px
         position: right bottom
 
     +single-box-shadow
+
+.container:hover
+    +rotate(-5deg)
 
