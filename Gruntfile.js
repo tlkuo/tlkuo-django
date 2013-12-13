@@ -35,9 +35,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-jam');
 
   // Default task.
-  grunt.registerTask('default', ['compass', 'htmlmin', 'requirejs', 'jam']);
+  grunt.registerTask('default', ['compass', 'htmlmin', 'requirejs', 'imagemin', 'jam']);
 
 };

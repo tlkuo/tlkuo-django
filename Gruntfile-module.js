@@ -80,6 +80,22 @@ module.exports = function(grunt, moduleName) {
       }
     };
 
+    config.imagemin = {
+      // https://github.com/gruntjs/grunt-contrib-imagemin
+      options: {
+        optimizationLevel: 7,
+        progressive: true,
+        interlaced: true,
+        pngquant: false
+      },
+      files: [{
+        expand: true,
+        cwd: [static_module, moduleName, 'images'].join('/'),
+        src: ['**/*.{png,jpg,gif}'],
+        dest: ['<%= path.static_root %>', moduleName, 'images'].join('/')
+      }]
+    };
+
     for (var path in config.requirejs.options.paths)
         config.requirejs.options.paths[path] = "empty:"
 
