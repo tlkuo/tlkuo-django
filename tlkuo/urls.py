@@ -14,5 +14,6 @@ urlpatterns = patterns('',
     url(r'^about/', include('about.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hook/', include('github_hook.urls')),
+    url(r'^global/', include('global.urls')),
 ) + static('/jam/static/', document_root = settings.STATIC_JAM)
 
