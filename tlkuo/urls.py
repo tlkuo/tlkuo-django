@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     # url(r'^$', 'tlkuo.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
+    url(r'^sharecam/', include('sharecam.urls')),
     url(r'^about/', include('about.urls')),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^hook/', include('github_hook.urls')),

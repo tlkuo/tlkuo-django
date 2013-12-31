@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'github_hook',
     'about',
     'jam',
+    'sharecam',
 )
 
 MIDDLEWARE_CLASSES = (

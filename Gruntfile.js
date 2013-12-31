@@ -28,6 +28,7 @@ module.exports = function(grunt) {
 
   gruntModules(grunt, {
     global: require('./Gruntfile-module.js'),
+    sharecam: require('./Gruntfile-module.js'),
     about: require('./Gruntfile-module.js')
   });
 
