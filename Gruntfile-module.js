@@ -43,6 +43,7 @@ module.exports = function(grunt, moduleName) {
         optimize: 'uglify2',
         baseUrl: [static_module, moduleName, 'js'].join('/'),
         paths: pkg.jam ? pkg.jam.dependencies : {},
+        findNestedDependencies: true,
         mainConfigFile: [static_module, moduleName, 'js', moduleName + '.r.js' ].join('/'),
         out: ['<%= path.static_root %>', moduleName, 'js', moduleName + '.r.js'].join('/')
       }
