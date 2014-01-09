@@ -37,7 +37,7 @@ define(['require', 'jquery.mobile'], function (require) {
 
             thisObj.$body.on('pagecontainertransition', function (e, ui) {
                 if (ui.toPage.attr('id') == 'page_client') {
-                    if (thisObj.id && thisObj.password) {
+                    if (thisObj.id !== null && thisObj.password !== null) {
                         thisObj.$client.find('#btn_login').button('disable');
                         thisObj.$client.find('[feature]').button('enable');
                     }
