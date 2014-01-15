@@ -12,6 +12,7 @@ define(['require', 'jquery.mobile'], function (require) {
 
     var func = function ($el) {
         var thisObj = this,
+            onReady = null,
             hbsPath = window.location.pathname == '/' ? './client.hbs.html' : require.toUrl('../client.hbs.html');
 
         thisObj.id = null;
@@ -19,7 +20,13 @@ define(['require', 'jquery.mobile'], function (require) {
         thisObj.$el = $el;
         thisObj.$body = $('body');
 
-        $.get(hbsPath, function (data) {
+        $.get(hbsPath, onReady = function (data) {
+            // check if jquery.mobile.css ready
+            if (thisObj.$body.css('overflow-x') != 'hidden') {
+                setTimeout(function () { onReady(data); }, 1000);
+                return;
+            }
+
             var template = Handlebars.compile($.trim(data));
             thisObj.$el.append(template());
             thisObj.$body.pagecontainer('change', '#page_client', { changeHash: false });
